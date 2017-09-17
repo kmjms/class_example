@@ -1,0 +1,66 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Ejemplo Clase</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a href="/">Home</a></li>
+        <li class="active"><a href="#">Acerca de</a></li>
+        <li ><a href="<%= projects_index_path %>">Proyectos</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+
+            <li><a href="<%=edit_user_registration_path %>"><span class="glyphicon glyphicon-settings"></span> Configuraciones</a></li>
+
+             <td><%= link_to 'Cerrar Sesion', destroy_user_session_path, method: :delete,class: 'btn btn-danger' %></td>
+            <% else %>
+            <li><a href="<%=new_user_session_path %>"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
+        <% end %>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid text-center">
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="http://facebook.com/profile.php">Facebook</a></p>
+      <p><a href="https://twitter.com/uncolombia?lang=es">Twitter</a></p>
+      <p><a href="https://www.instagram.com/explore/locations/235252960/universidad-nacional-de-colombia-sede-bogota/">Instagram</a></p>
+    </div>
+    <div class="col-sm-8 text-left">
+      <h2>El talento ‘made in Colombia' presente en el Mobile World Congress</h2>
+      <p>Ocho equipos de emprendedores colombianos dicen presente en uno de los congresos más importantes de tecnología en el mundo: el Mobile World Congress, que por primera vez en su historia, abre sus puertas en San Francisco, Estados Unidos.</p>
+      <p>Los jóvenes, entre los 24 y 30 años de edad, algunos recién graduados de la universidad, hablan con felicidad de lo que significa para ellos ser parte de los 1.000 expositores que conforman el congreso.</p>
+      <p>Los emprendedores, que viajaron a San Francisco con ayuda de Procolombia, el MinTIC y de los ingresos obtenidos a través de sus empresas, tienen un objetivo en la feria y va más allá de conseguir financiación: “darle a conocer al mundo el talento colombiano”.</p>
+      <p>Así lo aseguró Robert Parada, un emprendedor antioqueño y director de PetyApp, una aplicación que busca cambiar la forma como las personas cuidan a sus mascotas. </p>
+      <p>“Nuestra aplicación conecta a dueños de mascotas con proveedores de productos y servicio para que reciban atención personalizada. Nuestros objetivos en esta feria son dos: por un lado, levantar 400.000 dólares en inversión de capital para expandir nuestro software en varias partes del mundo. Y de otro lado, es visibilizar el talento colombiano ante grandes compañías de tecnología”, agregó Parada.</p>
+      <hr>
+    </div>
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+
+            <img width="100%" height="100%" src="http://programacion.net/files/article/20151023121029_rubyrails.png" alt="">
+      </div>
+      <div class="well">
+
+              <img width="100%" src="http://carrerasuniversitarias.com.co/logos/original/logo-universidad-nacional-de-colombia.png" alt="">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<footer class="container-fluid text-center">
+  <p>KMJMS Derechos reservados</p>
+</footer>

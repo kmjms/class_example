@@ -1,0 +1,48 @@
+
+
+
+<div class="panel panel-primary text-center col-md-6 col-md-offset-3">
+  <div class="panel-heading">
+    <h3>Editar</h3>
+  </div>
+  <div class="panel-body">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= devise_error_messages! %>
+      <div class="col-md-6 col-md-offset-7">
+        <%= button_to "Cancelar cuenta", registration_path(resource_name), data: { confirm: "Esta seguro?" }, method: :delete,class:"btn btn-danger" %>
+      </div>
+      <div class="field">
+        <%= f.label :Email %><br />
+        <%= f.email_field :email, autofocus: true,class:"form-control" %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="field">
+        <%= f.label :Contraseña %> <i>(dejar en blanco si no desea cambiarla)</i><br />
+        <%= f.password_field :password, autocomplete: "off",class:"form-control" %>
+        <% if @minimum_password_length %>
+          <br />
+          <em><%= @minimum_password_length %> caracteres minimo</em>
+        <% end %>
+      </div>
+
+      <div class="field">
+        <%= f.label :confirmacion_contraseña %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off",class:"form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :contraseña_actual %> <i>(necesitamos la contraseña actual para confirmar cambios)</i><br />
+        <%= f.password_field :current_password, autocomplete: "off",class:"form-control" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Update",class:"btn btn-primary btn-block",style:"margin-top:15px" %>
+      </div>
+      <%= link_to "Atras", :back, class: "pull-left" %>
+    <% end %>
+  </div>
+</div>
